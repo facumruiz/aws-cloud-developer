@@ -1,0 +1,6 @@
+.env
+.localstack/
+terraform/.terraform/
+terraform/*.tfstate*
+build/
+node_modules/

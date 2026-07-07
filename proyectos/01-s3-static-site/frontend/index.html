@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Proyecto 1 - S3 + Lambda</title>
+</head>
+<body style="font-family: sans-serif; max-width: 500px; margin: 60px auto;">
+  <h1>Sitio estático en S3</h1>
+  <p>Este HTML está servido desde un bucket S3 (simulado con LocalStack).</p>
+  <button id="btn">Llamar a la API (Lambda)</button>
+  <p id="resultado"></p>
+
+  <script>
+    // OJO: esta URL se reemplaza según el endpoint que genere API Gateway al hacer el deploy.
+    const API_URL = "http://localhost:4566/restapis/API_ID/local/_user_request_/hello";
+
+    document.getElementById("btn").addEventListener("click", async () => {
+      const res = await fetch(API_URL + "?name=Portfolio");
+      const data = await res.json();
+      document.getElementById("resultado").innerText = data.message;
+    });
+  </script>
+</body>
+</html>
