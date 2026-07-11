@@ -90,7 +90,7 @@ Ya no es simulado — esto crea recursos de verdad en tu cuenta de AWS (dentro d
 ### Requisitos
 
 - Usuario IAM creado (ej: `dev-terraform`) con política `AdministratorAccess`
-- AWS CLI configurado con sus credenciales: `aws configure` (ver `../../PLAN.md` o el módulo `00-seguridad-cuenta-real` para el detalle de por qué no se usa la cuenta root)
+- AWS CLI configurado con sus credenciales: `aws configure` (ver `../../conceptos/00b-usuario-iam-despliegues/README.md` para el paso a paso completo)
 - Verificar que apunta a la cuenta correcta: `aws sts get-caller-identity`
 
 ### Diferencias con la versión LocalStack
