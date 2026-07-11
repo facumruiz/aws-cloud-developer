@@ -21,6 +21,7 @@ Cada módulo es un concepto independiente que corre con `node app.js`, sin Docke
 | # | Módulo | Concepto |
 |---|---|---|
 | 00 | [seguridad-cuenta-real](./conceptos/00-seguridad-cuenta-real) | Billing Alarm (con capturas) — antes de tocar la cuenta real |
+| 00b | [usuario-iam-despliegues](./conceptos/00b-usuario-iam-despliegues) | Usuario IAM (dev-terraform) para Terraform/CLI, sin usar la cuenta root |
 | 01 | [lambda-basics](./conceptos/01-lambda-basics) | Patrón handler de Lambda + CRUD básico (+ guía AWS real) |
 | 02 | [async-errores](./conceptos/02-async-errores) | Manejo de errores en código asíncrono |
 | 03 | [sqs-productor-consumidor](./conceptos/03-sqs-productor-consumidor) | Colas: desacoplar productor y consumidor |
