@@ -85,3 +85,15 @@ Terraform + LocalStack (simulado) y, una vez firme, los mismos proyectos despleg
 
 - [AWS Skill Builder — cursos gratis para Developer](https://skillbuilder.aws/category/role/developer?page=1&accessTier=free): cursos oficiales gratuitos de AWS filtrados por rol "Developer". No consume créditos de la cuenta (plataforma separada).
 - [AWS Skill Builder — ruta DevOps Engineer](https://skillbuilder.aws/category/role/dev-ops-engineer): cursos filtrados por el rol DevOps Engineer.
+
+## Comandos útiles
+
+### Ver consumo del Free Tier / créditos por terminal
+
+```bash
+aws freetier get-free-tier-usage
+```
+
+Devuelve un JSON con el uso real de cada servicio contra su límite gratuito mensual (`actualUsageAmount` vs `limit`). Útil para chequear rápido que no te estás acercando a ningún límite, sin entrar a la consola web.
+
+Nota: puede no reflejar servicios usados muy recientemente (Lambda, S3, API Gateway) hasta 24-48hs después del uso — el dato no es en tiempo real.
