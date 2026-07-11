@@ -14,6 +14,7 @@ Cada carpeta de módulo tiene dos partes:
 | # | Carpeta | Concepto | Node puro | En AWS real |
 |---|---|---|---|---|
 | 00 | [seguridad-cuenta-real](./00-seguridad-cuenta-real) | Billing Alarm (con capturas) | — | ✅ Hecho |
+| 00b | [usuario-iam-despliegues](./00b-usuario-iam-despliegues) | Usuario IAM (dev-terraform) para Terraform/CLI, sin usar la cuenta root | — | ✅ Hecho |
 | 01 | [lambda-basics](./01-lambda-basics) | Patrón handler de Lambda + CRUD básico | ✅ Hecho | 🔵 En curso |
 | 02 | [async-errores](./02-async-errores) | Manejo de errores en código asíncrono | ✅ Hecho | ⬜ Pendiente |
 | 03 | [sqs-productor-consumidor](./03-sqs-productor-consumidor) | Colas: desacoplar productor y consumidor | ⬜ Pendiente | ⬜ Pendiente |
