@@ -83,6 +83,71 @@ Problemas reales encontrados corriendo esto en Debian/Ubuntu, en orden de aparic
 | `tflocal`: `Unable to determine version: [Errno 2] No such file or directory: 'terraform'` | Terraform no estaba instalado (tflocal es solo un wrapper) | Instalar Terraform real (ver arriba) |
 | `awslocal`: `No such file or directory: '.../.spicetify/aws'` | Bash cacheó una ruta vieja de `aws` (de una instalación previa/otra herramienta) que ya no existe | `hash -r` para limpiar el caché de comandos de la sesión, y si `aws` no existe todavía, `pipx install awscli` |
 
+## 🌎 Desplegar en AWS real (no LocalStack)
+
+Ya no es simulado — esto crea recursos de verdad en tu cuenta de AWS (dentro del Free account plan, sin costo).
+
+### Requisitos
+
+- Usuario IAM creado (ej: `dev-terraform`) con política `AdministratorAccess`
+- AWS CLI configurado con sus credenciales: `aws configure` (ver `../../PLAN.md` o el módulo `00-seguridad-cuenta-real` para el detalle de por qué no se usa la cuenta root)
+- Verificar que apunta a la cuenta correcta: `aws sts get-caller-identity`
+
+### Diferencias con la versión LocalStack
+
+| | LocalStack (`terraform/`) | AWS real (`terraform-aws-real/`) |
+|---|---|---|
+| Provider | Con `endpoints {}` apuntando a `localhost:4566` | Provider AWS estándar, usa las credenciales de `aws configure` |
+| Nombre del bucket S3 | Fijo (`portfolio-static-site`) | Con el account id agregado (los nombres de bucket son únicos en TODO AWS, no solo en tu cuenta) |
+| Rol IAM de la Lambda | Sin política de logs (LocalStack no la exige) | Con `AWSLambdaBasicExecutionRole` adjunta (sin esto, en AWS real la Lambda no puede escribir en CloudWatch Logs) |
+| Comandos | `tflocal`, `awslocal` | `terraform`, `aws` (los reales, sin wrapper) |
+
+### Cómo correrlo
+
+```bash
+./deploy-aws-real.sh
+```
+
+Aplica el Terraform contra la cuenta real y sube el frontend. Al final imprime las URLs reales (no `localhost`).
+
+Como siempre, copiar la URL de la API en `frontend/index.html` y volver a subir:
+
+```bash
+aws s3 cp frontend/index.html s3://<nombre-del-bucket-que-imprimió-el-script>/index.html
+```
+
+### Ver los logs reales
+
+CloudWatch → Log groups → buscar `/aws/lambda/hello-function-real`. Ahí se ven las invocaciones reales, con duración y memoria usada — la misma vista que se usaría para debuggear en un trabajo real.
+
+### Limpiar (no dejar nada corriendo en la cuenta real sin usar)
+
+```bash
+cd terraform-aws-real
+terraform destroy -auto-approve
+```
+
+### Evidencia del deploy real (capturas propias)
+
+**1. Salida de `terraform apply` — 14 recursos creados, URLs reales de AWS (no `localhost`):**
+
+![Outputs reales](./capturas-aws-real/01-terraform-apply-outputs-reales.png)
+
+**2. Sitio cargando desde la URL real de S3 (`s3-website-us-east-1.amazonaws.com`), antes de invocar la API:**
+
+![Sitio antes de llamar la API](./capturas-aws-real/02-sitio-antes-de-llamar-api.png)
+
+**3. Después de tocar "Llamar a la API (Lambda)", respuesta real de la Lambda en la cuenta de AWS:**
+
+![Sitio con respuesta de la Lambda](./capturas-aws-real/03-sitio-con-respuesta-lambda.png)
+
+**4. Respuesta JSON cruda de la API (vista de red del navegador), confirmando que viene de la Lambda real:**
+
+![JSON de la respuesta](./capturas-aws-real/04-respuesta-json-lambda-real.png)
+
+> Nota: el texto del `index.html` todavía dice "simulado con LocalStack" porque es el mismo archivo reusado de la versión local — es solo un detalle de copy, no afecta el funcionamiento. Se puede actualizar el texto del frontend si se quiere prolijidad total.
+
+
 ## Decisiones de arquitectura (para la entrevista)
 
 - **AWS_PROXY integration** en API Gateway: la Lambda recibe el request completo y devuelve la respuesta completa (statusCode, headers, body) — patrón estándar para APIs serverless en Node.

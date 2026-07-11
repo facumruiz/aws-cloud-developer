@@ -74,7 +74,7 @@ Terraform + LocalStack (simulado) y, una vez firme, los mismos proyectos despleg
 
 | # | Proyecto | Estado |
 |---|---|---|
-| 1 | Sitio estático (S3) + API (Lambda + API Gateway) | ⬜ Pendiente |
+| 1 | Sitio estático (S3) + API (Lambda + API Gateway) | ✅ Hecho (AWS real, con capturas) |
 | 2 | CRUD API (API Gateway + Lambda + DynamoDB) | ⬜ Pendiente |
 | 3 | Procesador asíncrono (SQS + Lambda + DynamoDB) | ⬜ Pendiente |
 | 4 | Pipeline de imágenes (trigger S3 + Lambda) | ⬜ Pendiente |

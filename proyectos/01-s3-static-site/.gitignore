@@ -2,5 +2,7 @@
 .localstack/
 terraform/.terraform/
 terraform/*.tfstate*
+terraform-aws-real/.terraform/
+terraform-aws-real/*.tfstate*
 build/
 node_modules/
