@@ -6,6 +6,8 @@ Repo de estudio y portfolio práctico de AWS, armado con Node.js, sin certificac
 
 Ver [`PLAN.md`](./PLAN.md): objetivo, checkpoint de estado actual, info sobre practicar gratis (Free account plan de AWS), y roadmap de ambas líneas de trabajo.
 
+Ver [`GLOSARIO.md`](./GLOSARIO.md): resumen de vocabulario técnico (AWS, serverless, Node.js) para repasar antes de una entrevista.
+
 ## Estructura del repo
 
 ```
