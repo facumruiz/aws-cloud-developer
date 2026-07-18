@@ -160,3 +160,21 @@ Estos conceptos aparecieron en las explicaciones y ejercicios, pero sin ponerles
 **Batch**: un lote de varios mensajes/registros que llegan juntos en una sola invocación. Un evento de SQS hacia una Lambda puede traer varios mensajes en un solo `event.Records`, en vez de invocar la Lambda una vez por mensaje.
 
 **Fail-fast**: la práctica de hacer que un programa falle de inmediato y con un mensaje claro cuando falta algo indispensable (ej: una variable de entorno obligatoria), en vez de seguir ejecutando con un valor por defecto silencioso que puede esconder un error más grave después (Módulo 06).
+
+---
+
+## Conclusiones clave de las clases (apuntes concisos)
+
+Ideas centrales que se llegaron a razonar en el curso, en formato pregunta → conclusión. Sirven para repasar el "por qué" sin releer toda la explicación larga.
+
+### ¿Por qué una cola da resiliencia? (Módulo 03)
+
+**Escenario**: el consumidor está procesando un pedido y se cae a mitad de camino (crashea, se queda sin memoria, etc.).
+
+**Sin cola**: el pedido se pierde. No queda registrado en ningún lado que "esto todavía hay que hacerlo" — simplemente desaparece.
+
+**Con cola**: el mensaje sigue guardado en la cola hasta que el consumidor confirma (`ack`) que lo procesó bien. Si se cae antes de confirmar, el mensaje vuelve a estar disponible — lo agarra otro consumidor, o el mismo cuando se recupera.
+
+**Conclusión**: las colas no son solo "para ir más rápido" — son, sobre todo, para **no perder trabajo cuando algo falla**. Y en sistemas distribuidos, algo *siempre* falla en algún momento.
+
+Comprobado en la práctica en el Módulo 03 (AWS real): se hizo fallar al consumidor a propósito 5 veces seguidas, y el mensaje nunca se perdió — se reintentó automáticamente hasta que el código se arregló y se procesó bien.
