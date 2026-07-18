@@ -140,3 +140,23 @@ Preguntas típicas que se arman a partir de estos conceptos:
 - ¿Cuándo elegirías DynamoDB en vez de una base SQL?
 - ¿Qué es un cold start y cómo se mitiga?
 - ¿Por qué importa la idempotencia en sistemas distribuidos?
+
+---
+
+## Términos que se charlaron por la idea, sin nombrarlos técnicamente
+
+Estos conceptos aparecieron en las explicaciones y ejercicios, pero sin ponerles la palabra exacta en su momento. Quedan acá para tener el nombre técnico correcto a mano.
+
+**Desacoplamiento (decoupling)**: separar dos componentes (ej: productor y consumidor) para que no dependan del tiempo ni la disponibilidad del otro. Es el concepto central detrás de usar una cola en vez de llamar directo a un servicio (Módulo 03).
+
+**Ack (acknowledgment)**: la confirmación que un consumidor le da a la cola de que terminó de procesar un mensaje con éxito. En SQS, si el consumidor no confirma (porque falla o tarda demasiado), el mensaje se considera no procesado y vuelve a estar disponible — esto es lo que se vio en el experimento de fallos del Módulo 03 (AWS real).
+
+**Resiliencia**: la capacidad de un sistema de seguir funcionando (o recuperarse) frente a fallos parciales, sin perder trabajo ni caerse por completo. La cola SQS le da resiliencia al sistema porque el trabajo no se pierde si el consumidor falla.
+
+**Buffer**: un lugar donde se acumula temporalmente el trabajo pendiente entre dos componentes que van a velocidades distintas. La cola SQS actúa como buffer entre el productor y el consumidor.
+
+**Fan-out**: patrón donde un mismo mensaje/evento se distribuye a **varios** destinos a la vez (ej: SNS mandando la misma notificación a varias colas SQS suscriptas). Se mencionó como la solución cuando dos Lambdas distintas necesitan reaccionar al mismo evento (Módulo 04).
+
+**Batch**: un lote de varios mensajes/registros que llegan juntos en una sola invocación. Un evento de SQS hacia una Lambda puede traer varios mensajes en un solo `event.Records`, en vez de invocar la Lambda una vez por mensaje.
+
+**Fail-fast**: la práctica de hacer que un programa falle de inmediato y con un mensaje claro cuando falta algo indispensable (ej: una variable de entorno obligatoria), en vez de seguir ejecutando con un valor por defecto silencioso que puede esconder un error más grave después (Módulo 06).
