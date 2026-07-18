@@ -17,7 +17,7 @@ Cada carpeta de módulo tiene dos partes:
 | 00b | [usuario-iam-despliegues](./00b-usuario-iam-despliegues) | Usuario IAM (dev-terraform) para Terraform/CLI, sin usar la cuenta root | — | ✅ Hecho |
 | 01 | [lambda-basics](./01-lambda-basics) | Patrón handler de Lambda + CRUD básico | ✅ Hecho | 🔵 En curso |
 | 02 | [async-errores](./02-async-errores) | Manejo de errores en código asíncrono | ✅ Hecho | ⬜ Pendiente |
-| 03 | [sqs-productor-consumidor](./03-sqs-productor-consumidor) | Colas: desacoplar productor y consumidor | ⬜ Pendiente | ⬜ Pendiente |
+| 03 | [sqs-productor-consumidor](./03-sqs-productor-consumidor) | Colas: desacoplar productor y consumidor | ✅ Hecho | 🔵 En curso |
 | 04 | [eventos-triggers](./04-eventos-triggers) | Arquitectura event-driven (S3 → Lambda) | ⬜ Pendiente | ⬜ Pendiente |
 | 05 | [idempotencia-reintentos](./05-idempotencia-reintentos) | Evitar duplicados en sistemas distribuidos | ⬜ Pendiente | ⬜ Pendiente |
 | 06 | [config-variables-entorno](./06-config-variables-entorno) | Separar código de configuración | ⬜ Pendiente | ⬜ Pendiente |
