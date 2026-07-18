@@ -20,3 +20,8 @@ Corré varias veces: como el fallo es aleatorio (40% de probabilidad), vas a ver
 
 - Agregá un tercer handler que reintente automáticamente 1 vez si falla antes de devolver error
 - Pensá: ¿por qué no conviene reintentar infinitas veces? (pista: esto se conecta con el módulo 05, idempotencia)
+
+## Documentación oficial
+
+- [Lambda: reintentos e invocación](https://docs.aws.amazon.com/lambda/latest/dg/invocation-retries.html)
+- [Lambda: manejo de excepciones en Node.js](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-exceptions.html)

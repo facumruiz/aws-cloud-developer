@@ -80,3 +80,9 @@ Se restauró el código original de `consumidor.mjs` y se hizo Deploy de nuevo. 
 
 - Lambda → borrar `pedidos-productor` y `pedidos-consumidor`
 - SQS → borrar `pedidos-queue`
+
+## Documentación oficial
+
+- [Usar Lambda con Amazon SQS](https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html)
+- [SQS: visibility timeout (por qué se reintentan los mensajes)](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html)
+- [Política administrada AWSLambdaSQSQueueExecutionRole](https://docs.aws.amazon.com/aws-managed-policy/latest/reference/AWSLambdaSQSQueueExecutionRole.html)

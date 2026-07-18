@@ -18,3 +18,9 @@ node app.js
 
 - Conectá esto con el módulo 03 (colas): agregá una `idempotencyKey` a los mensajes de la cola y hacé que el consumidor ignore mensajes ya procesados
 - Pensá: ¿dónde guardarías las claves ya procesadas en un sistema real, y por cuánto tiempo? (en AWS real, normalmente se usa DynamoDB con un TTL)
+
+## Documentación oficial
+
+- [Lambda: reintentos e invocación](https://docs.aws.amazon.com/lambda/latest/dg/invocation-retries.html)
+- [SQS: colas estándar (entrega "at-least-once")](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/standard-queues.html)
+- [DynamoDB: expresiones de condición](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.ConditionExpressions.html)

@@ -35,3 +35,10 @@ En Lambda, vos configurás cuánta memoria le das a la función (128MB a 10GB). 
 ## Para practicar (aunque sea teórico)
 
 Escribí, con tus propias palabras y sin mirar esto, una respuesta corta (3-4 líneas) a cada una de estas 4 preguntas. Es el mejor ejercicio para prepararte a explicarlo en una entrevista real, no solo a "saberlo".
+
+## Documentación oficial
+
+- [Lambda: cuotas y límites](https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html)
+- [Lambda: entorno de ejecución (cold starts)](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html)
+- [DynamoDB: componentes principales](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.CoreComponents.html)
+- [AWS: NoSQL vs relacional](https://aws.amazon.com/nosql/)

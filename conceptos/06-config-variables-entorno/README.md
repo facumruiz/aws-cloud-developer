@@ -23,3 +23,7 @@ TABLE_NAME=tasks-dev node app.js
 
 - Agregá una segunda variable, `STAGE` (por ejemplo `dev` o `prod`), y hacé que el mensaje de log cambie según el valor
 - Pensá: ¿por qué es buena idea que el código falle fuerte y claro (`throw`) si falta una variable obligatoria, en vez de seguir con un valor por defecto?
+
+## Documentación oficial
+
+- [Lambda: variables de entorno](https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html)

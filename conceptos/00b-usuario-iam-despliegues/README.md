@@ -50,3 +50,9 @@ Debería devolver un JSON con el `Account` de la cuenta real y el `Arn` apuntand
 ## Resultado
 
 A partir de acá, cualquier comando de `terraform` o `aws` corrido en la terminal usa estas credenciales del usuario `dev-terraform`, no la cuenta root.
+
+## Documentación oficial
+
+- [IAM: usuarios de IAM](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users.html)
+- [IAM: claves de acceso](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html)
+- [IAM: mejores prácticas de seguridad (por qué no usar root)](https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html)

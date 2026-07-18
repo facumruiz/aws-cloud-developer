@@ -18,3 +18,9 @@ node app.js
 
 - Agregá un segundo listener al bucket (por ejemplo, uno que solo registre un log de auditoría de todo lo que se sube, sin importar el tipo)
 - Pensá: ¿qué pasa si DOS Lambdas distintas necesitan reaccionar al mismo evento? (en AWS real, esto se resuelve con **SNS** — un servicio que distribuye una notificación a múltiples suscriptores)
+
+## Documentación oficial
+
+- [S3: notificaciones de eventos](https://docs.aws.amazon.com/AmazonS3/latest/userguide/EventNotifications.html)
+- [Usar Lambda con Amazon S3](https://docs.aws.amazon.com/lambda/latest/dg/with-s3.html)
+- [Amazon SNS - guía del desarrollador](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)

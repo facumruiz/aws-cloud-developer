@@ -73,3 +73,9 @@ Pestaña **Monitor → View CloudWatch logs**. Ahí vas a ver cada invocación r
 ## Limpiar (para no dejar nada corriendo sin usar)
 
 Lambda no cobra por estar "creada" sin invocarse, así que no es obligatorio borrarla, pero si querés dejar todo prolijo: **Actions → Delete function**.
+
+## Documentación oficial
+
+- [Primeros pasos con Lambda (consola)](https://docs.aws.amazon.com/lambda/latest/dg/getting-started.html)
+- [Entorno de ejecución de Lambda (cold starts)](https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtime-environment.html)
+- [Lambda: logs en CloudWatch](https://docs.aws.amazon.com/lambda/latest/dg/monitoring-cloudwatchlogs.html)

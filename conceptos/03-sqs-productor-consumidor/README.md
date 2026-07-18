@@ -18,3 +18,8 @@ node app.js
 
 - Agregá que el consumidor falle aleatoriamente (como en el módulo 02) y que el mensaje **vuelva a la cola** si falla, en vez de perderse
 - Pensá: si un mensaje falla 5 veces seguidas, ¿debería reintentarse para siempre? (esto es lo que en AWS real se resuelve con una **Dead Letter Queue** — una cola aparte donde van los mensajes que fallaron demasiadas veces, para revisarlos a mano)
+
+## Documentación oficial
+
+- [Amazon SQS - guía del desarrollador](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/welcome.html)
+- [Cómo funcionan las colas de SQS](https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-how-it-works.html)

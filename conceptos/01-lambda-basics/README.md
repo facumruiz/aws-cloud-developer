@@ -19,3 +19,8 @@ node app.js
 - Agregá un campo `priority` a las tareas
 - Hacé que `createTask` rechace títulos de más de 100 caracteres
 - Pensá: ¿qué pasa si dos requests llegan al mismo tiempo? (esto lo vemos más a fondo en el módulo 05)
+
+## Documentación oficial
+
+- [¿Qué es AWS Lambda?](https://docs.aws.amazon.com/lambda/latest/dg/welcome.html)
+- [Lambda: el handler en Node.js](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-handler.html)

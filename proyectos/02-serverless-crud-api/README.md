@@ -104,3 +104,9 @@ cd terraform && tflocal destroy -auto-approve
 cd ..
 docker compose down -v
 ```
+
+## Documentación oficial
+
+- [DynamoDB - guía del desarrollador](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Introduction.html)
+- [DynamoDB: modos de capacidad (PAY_PER_REQUEST)](https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadWriteCapacityMode.html)
+- [API Gateway: API REST](https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-rest-api.html)

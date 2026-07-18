@@ -59,3 +59,9 @@ Click en **Crear alarma**.
 ## Resultado
 
 Si el gasto estimado de la cuenta supera $1 USD, llega un email de aviso. Con esto ya se puede practicar en la cuenta real de AWS (Free Tier) sin miedo a un gasto sorpresa.
+
+## Documentación oficial
+
+- [CloudWatch: crear una alarma de facturación](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/monitor_estimated_charges_with_cloudwatch.html)
+- [AWS Free Tier](https://aws.amazon.com/free/)
+- [Amazon SNS - guía del desarrollador](https://docs.aws.amazon.com/sns/latest/dg/welcome.html)

@@ -161,3 +161,9 @@ cd terraform && tflocal destroy -auto-approve
 cd ..
 docker compose down -v
 ```
+
+## Documentación oficial
+
+- [S3: alojamiento de sitios web estáticos](https://docs.aws.amazon.com/AmazonS3/latest/userguide/WebsiteHosting.html)
+- [S3: políticas de bucket](https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-policies.html)
+- [API Gateway: integración proxy Lambda](https://docs.aws.amazon.com/apigateway/latest/developerguide/set-up-lambda-proxy-integrations.html)
